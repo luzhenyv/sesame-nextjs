@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
 :root {
+  /* Base colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2D2D2D; /* Charcoal for primary content */
+  
+  /* Theme colors */
+  --color-primary: #2D2D2D; /* Charcoal */
+  --color-secondary: #5A5A5A; /* Medium Gray */
+  --color-accent: #E0E0E0; /* Light Gray */
+  
+  /* Health status indicators */
+  --color-success: #2E8B57; /* Muted Emerald */
+  --color-warning: #CC8400; /* Soft Amber */
+  --color-critical: #DC143C; /* Deep Crimson */
+  
+  /* Typography */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 @theme inline {
@@ -16,11 +31,66 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    
+    /* Adjusted theme colors for dark mode */
+    --color-primary: #ededed; /* Light text for dark mode */
+    --color-secondary: #b0b0b0; /* Lighter gray for dark mode */
+    --color-accent: #404040; /* Darker gray for dark mode */
+    
+    /* Health status indicators remain the same for consistency */
+    --color-success: #2E8B57;
+    --color-warning: #CC8400;
+    --color-critical: #DC143C;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility classes for health status indicators */
+.text-success {
+  color: var(--color-success);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-critical {
+  color: var(--color-critical);
+}
+
+.bg-success {
+  background-color: var(--color-success);
+}
+
+.bg-warning {
+  background-color: var(--color-warning);
+}
+
+.bg-critical {
+  background-color: var(--color-critical);
+}
+
+/* Accessibility improvements */
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive typography */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
 }
