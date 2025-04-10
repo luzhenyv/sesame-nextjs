@@ -66,6 +66,10 @@ body {
   color: var(--color-critical);
 }
 
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
 .bg-success {
   background-color: var(--color-success);
 }
