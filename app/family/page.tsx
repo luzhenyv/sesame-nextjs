@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { UserCircle, Plus } from 'lucide-react';
+import HealthTimeline from '../ui/family/health-timeline';
 
 export default function FamilyPage() {
   const router = useRouter();
@@ -42,7 +43,7 @@ export default function FamilyPage() {
           </button>
         </div>
         
-        <div className="bg-background rounded-lg shadow-md overflow-hidden">
+        <div className="bg-background rounded-lg shadow-md overflow-hidden mb-8">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-accent/20">
               <thead className="bg-accent/5">
@@ -87,6 +88,8 @@ export default function FamilyPage() {
             </table>
           </div>
         </div>
+
+        <HealthTimeline />
       </div>
     </div>
   );
