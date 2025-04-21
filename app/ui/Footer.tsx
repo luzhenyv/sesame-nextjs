@@ -72,7 +72,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-[#1A1A1A] text-[#CCCCCC] z-40">
+    <footer className="bg-[#1A1A1A] text-[#CCCCCC] z-40 mt-auto">
       <div className="max-w-7xl mx-auto px-8 py-6">
         {/* Desktop View */}
         <div className="hidden md:grid md:grid-cols-4 gap-8">
